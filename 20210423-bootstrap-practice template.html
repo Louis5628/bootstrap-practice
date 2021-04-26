@@ -11,8 +11,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
+        nav .container .navbar {
+            padding: 0 24px;
+            height: 92px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
 
 
+        nav .container .navbar .logo img {
+            width: 40%;
+        }
 
         .navbar-collapse .shop-cart {
             font-size: 24px;
@@ -65,10 +76,9 @@
             text-align: center;
         }
 
-        /* footer .container .footer-up .col-12 {
-            padding-left: 80px;
-            text-align: center;
-        } */
+        footer .container .footer-up .col-12 p {
+            text-align: left;
+        }
 
 
 
@@ -92,8 +102,16 @@
             font-size: 16px;
         }
 
+        footer .container .footer-up .col-12.col-md-6 {
+            padding-left: 80px;
+        }
 
 
+        footer .footer-down .container {
+            max-width: 85%;
+            margin: auto;
+
+        }
 
 
         footer .footer-down {
@@ -113,9 +131,59 @@
 
         }
 
+        footer .footer-down .container .col-12 span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+
+
+        @media (max-width: 992px) {
+
+
+            footer .container .footer-up .col-12 {
+                display: flex;
+                justify-content: center;
+            }
+
+
+            footer .container .footer-up .col-12 p {
+                font-size: 14px;
+                text-align: left;
+            }
+
+            footer .container .footer-up .col-12.col-md-6 {
+                margin-top: 50px;
+                padding-left: 0;
+            }
+
+            footer .container .footer-up .col-12.col-md-6 h2 {
+                margin-bottom: 12px;
+            }
+
+            footer .container .footer-up .col-12.col-md-6 ul {
+                margin-bottom: 40px;
+            }
+
+        }
+
+
         @media (max-width: 768px) {
 
 
+            nav .container .navbar {
+                height: 77px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav .container .navbar .logo img {
+                width: 30%;
+            }
 
             footer .container .footer-up .col-12 a {
                 margin: auto;
@@ -133,29 +201,14 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                text-align: center;
             }
-
-            footer .container .footer-up .col-12.col-md-9 {
-                margin-top: 50px;
-            }
-
-            footer .container .footer-up .col-12.col-md-9 h2 {
-                margin-bottom: 12px;
-            }
-
-            footer .container .footer-up .col-12.col-md-9 ul{
-                margin-bottom: 40px;
-            }
-
 
             footer .footer-down .container {
-                width: 100%;
+                max-width: 85%;
                 margin: auto;
 
             }
-
-
-
 
         }
 
@@ -165,22 +218,19 @@
         @media (max-width: 576px) {
 
 
-            nav .container .navbar{
-                
+            nav .container .navbar {
                 height: 62px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
             }
 
-            nav .container .navbar .navbar-brand{
-             
-            padding: 0;
+            nav .container .navbar .navbar-brand {
+                padding: 0;
             }
-       
-            nav .container .navbar .logo img{
-                width: 20%
 
+            nav .container .navbar .logo img {
+                width: 20%;
             }
 
 
@@ -214,13 +264,6 @@
                 justify-content: center;
                 align-items: center;
             }
-
-
-
-
-
-
-
 
 
         }
@@ -277,9 +320,9 @@
 
 
     <footer>
-        <div class="container" style="max-width: 80%;">
+        <div class="container" style="max-width: 85%;">
             <div class="row footer-up no-gutters d-flex flex-lg-row">
-                <div class="col-12 justify-content-center col-md-2 col-lg-5 mr-md-5 d-flex flex-column">
+                <div class="col-12 col-md-4 col-lg-2 mr-md-5 mr-lg-0 d-flex flex-column">
 
                     <a class="d-flex justify-content-start align-items-center" href="">
                         <svg class="w-10 h-10 text-white " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"
@@ -307,11 +350,11 @@
                         </svg>
                         <p class="ml-3 mb-0 ">數位方塊</p>
                     </a>
-                    <p class="mt-md-5 mt-md-2">Air plant banjo lyft occupy retro<br> adaptogen indego</p>
+                    <p class="mt-md-0">Air plant banjo lyft occupy retro<br> adaptogen indego</p>
 
                 </div>
 
-                <div class="col-12 col-md-9 col-lg-7 ml-md-5">
+                <div class="col-12 col-md-6 col-lg-10 ml-md-5 ml-lg-0">
                     <div class="row">
                         <div class="text-center text-md-left col-md-6 col-lg-3">
                             <h2>CATEGORIES</h2>
@@ -356,7 +399,6 @@
         </div>
         <div class="footer-down no-gutters">
             <div class="container">
-
                 <div class="row">
                     <div class="col-12 col-sm-6">
                         <p class="mb-0 py-sm-3">© 2020 Tailblocks —<a href="https://twitter.com/knyttneve">
