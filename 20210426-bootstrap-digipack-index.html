@@ -241,6 +241,8 @@
 
         .section-6 img {
             width: 100%;
+            height: auto;
+            object-fit: cover;
         }
 
         .section-6 h2 {
@@ -287,37 +289,121 @@
         }
 
 
-        .section-6 .btn-group .btn{
+        .section-6 .btn-group .btn {
             width: 28px;
             height: 28px;
             margin: 0 4px;
             border: 2px solid #e5e7eb;
         }
 
-        .section-6 .btn-group .btn.white{
-           background-color: white;
-        }
-        .section-6 .btn-group .btn.black{
-           background-color: black;
-        }
-        .section-6 .btn-group .btn.blue{
-           background-color: rgb(99,102,241);
+        .section-6 .btn-group .btn.white {
+            background-color: white;
         }
 
-        .section-6 .size .size-select option{
+        .section-6 .btn-group .btn.black {
+            background-color: black;
+        }
+
+        .section-6 .btn-group .btn.blue {
+            background-color: rgb(99, 102, 241);
+        }
+
+        .section-6 .size .size-select option {
             display: flex;
             justify-content: center;
         }
 
 
-        .section-6 .price span{
+        .section-6 .price span {
             font-size: 24px;
         }
 
-        .section-6 .price .btn-group .button button{
+        .section-6 .price .btn-group .button button {
             border-radius: 5px;
             margin: 0;
-        } 
+        }
+
+        .section-7 .container {
+            max-width: 95%;
+            padding: 96px 20px;
+        }
+
+        .section-7 .row img {
+            object-fit: cover;
+        }
+
+        .section-7 .row h3 {
+            font-size: 12px;
+            font-weight: 100;
+            margin-bottom: 4px;
+        }
+
+        .section-7 .row h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 0px;
+        }
+
+
+        .section-8 .position-absolute {
+            z-index: 0;
+            background-color: rgb(209,213,219);
+        }
+
+        .section-8 iframe{
+            filter: grayscale(100%) opacity(0.4) contrast(1.2);
+        }
+
+
+        .section-8 .container {
+            max-width: 75%;
+            padding: 96px 20px;
+        }
+
+
+
+        .section-8 .container .row .col-md-0 {
+            z-index: -1;
+        }
+
+
+        .section-8 .container .row .col-md-12 {
+            z-index: 1;
+            background-color: white;
+            border: 0 solid #e5e7eb;
+            border-radius: 10px;
+        }
+
+        .section-8 h2{
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .section-8 label{
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .section-8 input{
+            border: 1px solid #e5e7eb;
+        }
+
+        .section-8 textarea{
+            resize : none;
+            border: 1px solid #e5e7eb;
+        }
+
+        .section-8 .button{
+            width: 100%;
+        }
+        .section-8 .button button{
+            width: 100%;
+            height: 44px;
+            font-size: 18px;
+            background-color:rgb(99,102,241);
+        }
+
+
 
 
 
@@ -355,15 +441,17 @@
 
             .section-6 img {
                 width: 100%;
-                height: 256px;
+                height: 16rem;
             }
 
+            .section-7 .container {
+                max-width: 85%;
 
+            }
 
-
-
-
-
+            .section-8 .container {
+                max-width: 80%;
+        }
 
 
         }
@@ -429,9 +517,27 @@
                 margin-top: 24px;
             }
 
+            .section-6 .container {
+                max-width: 90%;
+
+            }
 
 
 
+            .section-7 .container {
+                max-width: 95%;
+
+            }
+
+
+
+            .section-8 .container .row .col-md-12 {
+            margin-top: 40px;
+        }
+
+        .section-8 .container {
+                max-width: 80%;
+        }
 
         }
 
@@ -452,6 +558,22 @@
                 font-size: 24px;
                 margin-bottom: 16px;
             }
+
+            .section-6 .container {
+                max-width: 100%;
+
+            }
+
+            .section-7 .container {
+                max-width: 100%;
+
+            }
+
+            .section-8 .container {
+                max-width: 95%;
+        }
+
+
         }
     </style>
 
@@ -812,12 +934,12 @@
         </div>
 
         <div class="section-6">
-            <div class="container">
+            <div class="container px-0">
                 <div class="row mx-lg-5 no-gutters">
                     <div class="col-12 col-lg-6">
-                        <img src="https://dummyimage.com/400x400" alt="">
+                        <img src="https://dummyimage.com/400x400" alt="" style="width: 100%;">
                     </div>
-                    <div class="col-12 col-lg-6 py-3 pl-5">
+                    <div class="col-12 col-lg-6 py-3 pl-md-5">
                         <h2>BRAND NAME</h2>
                         <h1>The Catcher in the Rye</h1>
                         <div class="review p-0 no-gutters mb-3">
@@ -895,21 +1017,23 @@
                                 <span class="mr-1">Color</span>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn btn-secondary active white rounded-circle">
-                                      <input type="radio" name="options" id="option1" autocomplete="off" checked>
+                                        <input type="radio" name="options" id="option1" autocomplete="off" checked>
                                     </label>
                                     <label class="btn btn-secondary black rounded-circle">
-                                      <input type="radio" name="options" id="option2" autocomplete="off">
+                                        <input type="radio" name="options" id="option2" autocomplete="off">
                                     </label>
                                     <label class="btn btn-secondary blue rounded-circle">
-                                      <input type="radio" name="options" id="option3" autocomplete="off">
+                                        <input type="radio" name="options" id="option3" autocomplete="off">
                                     </label>
-                                  </div>
-                               
+                                </div>
+
                             </div>
                             <div class="size d-flex flex-row align-items-center">
                                 <span class="ml-3">Size</span>
                                 <div class="size-select">
-                                    <select class="ml-3 rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10" style="width: 80px;height: 42px;">
+                                    <select
+                                        class="ml-3 rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10"
+                                        style="width: 80px;height: 42px;">
                                         <option>SM</option>
                                         <option>M</option>
                                         <option>L</option>
@@ -924,15 +1048,20 @@
                         <div class="price d-flex align-items-center justify-content-between">
                             <span>$58.00</span>
 
-                            <div class="btn-group d-flex align-items-center">                           
-                                 <div class="button d-flex justify-content-center rounded"> <button type="button"
-                                class="btn btn-primary mt-0" style="width: 100px;height: 40px;">Button</button>
+                            <div class="btn-group d-flex align-items-center">
+                                <div class="button d-flex justify-content-center rounded"> <button type="button"
+                                        class="btn btn-primary mt-0" style="width: 100px;height: 40px;">Button</button>
                                 </div>
 
-                            <button class="rounded-circle ml-3" style="width:40px; height:40px;"><svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24" style="width:20px; height:20px;">
-                                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
-                                </path>
-                              </svg></button></div>
+                                <button class="rounded-circle ml-3" style="width:40px; height:40px;"><svg
+                                        fill="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24"
+                                        style="width:20px; height:20px;">
+                                        <path
+                                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z">
+                                        </path>
+                                    </svg></button>
+                            </div>
 
 
                         </div>
@@ -941,11 +1070,141 @@
             </div>
         </div>
 
+        <div class="section-7">
+            <div class="container">
+                <div class="row no-gutters ">
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
 
 
+                </div>
+                <div class="row no-gutters ">
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3 p-3">
+                        <a href="">
+                            <img class="rounded" src="https://dummyimage.com/425x265" alt=""
+                                style="width: 100%; height: 12rem">
+                        </a>
+                        <div class="mt-3">
+                            <h3>CATEGORY</h3>
+                            <h2>The Catalyzer</h2>
+                            <p class="mt-1 mb-0">$16.00</p>
+                        </div>
+                    </div>
 
 
+                </div>
 
+            </div>
+        </div>
+
+        <div class="section-8 position-relative">
+            <div class="position-absolute fixed-top" style="width: 100%; height: 100%;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8651.958828751922!2d120.71984214883342!3d24.252248919523726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34691a3d81132aa9%3A0xf0101d452f6d9c9f!2zNDIw5Y-w5Lit5biC6LGQ5Y6f5Y2A!5e0!3m2!1szh-TW!2stw!4v1619622464337!5m2!1szh-TW!2stw"
+                    marginheight="0" marginwidth="0" title="map" scrolling="no"
+                    style="width: 100%; height: 100%;border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-0 col-lg-6 col-xl-8"></div>
+                    <div class="col-md-12 col-lg-6 col-xl-4 d-flex flex-column p-4">
+                        <h2 class="mb-1">Feedback</h2>
+                        <p  class="mb-4">Post-ironic portland shabby chic echo park, banjo fashion axe</p>
+                        <div class="email d-flex flex-column">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="px-3 py-1 mb-4 rounded">
+                        </div>
+                        <div class="message d-flex flex-column">
+                            <label for="message">Message</label>
+                            <textarea name="message" id="message" cols="20" rows="5" class="px-3 py-1 mb-4"></textarea>
+                        </div>
+                        <div class="button d-flex justify-content-center"> <button type="button" class="btn btn-primary mt-0">Button</button></div>
+                        <p class="mt-2">Chicharrones blog helvetica normcore iceland tousled brook viral artisan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
     </main>
