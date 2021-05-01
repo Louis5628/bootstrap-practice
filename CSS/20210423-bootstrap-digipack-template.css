@@ -4,8 +4,16 @@ nav .container .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
 }
+
+
+.navbar-collapse .dropdown-menu{
+    position: absolute;
+    top: 50px;
+    left: -30px;
+}
+
 
 .navbar-collapse {
     background-color: white;
@@ -47,7 +55,10 @@ display: none;
 }
 
 
+.navbar-collapse .dropdown-menu{
+    z-index: 99;
 
+}
 
 
 main {
@@ -141,7 +152,21 @@ footer .footer-down .container .col-12 span {
 
 @media (max-width: 992px) {
 
+    .navbar{
+        position: relative;
+    }
 
+    .navbar-collapse .dropdown{
+       justify-content: center;
+
+    }
+
+    .navbar-collapse .dropdown-menu{
+        position: absolute;
+        top: 50px;
+        left: -0.4%;
+        width: calc(100vw - 90px);
+    }
 
     .navbar-collapse .navbar-nav li {
         margin-left: 0;
