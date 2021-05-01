@@ -7,23 +7,37 @@ nav .container .navbar {
 
 }
 
+.navbar-collapse {
+    background-color: white;
+    z-index: 99;
+
+}
 
 nav .container .navbar .logo img {
     width: 40%;
 }
 
-.navbar-collapse .shop-cart {
-    font-size: 24px;
-    padding-top: 8px;
-    margin-left: 30px;
-
+.navbar-collapse a{
+text-decoration: none;
 }
 
+.navbar-collapse .shop-cart {
+    font-size: 24px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: black;
+}
 
 .navbar-collapse .account {
     font-size: 30px;
-    padding-top: 5px;
-    margin-left: 30px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.dropdown-toggle::after{
+display: none;
 }
 
 
@@ -34,11 +48,12 @@ nav .container .navbar .logo img {
 
 
 
-/* main {
+
+
+main {
     width: 100%;
-    height: 1000px;
-    min-height: calc();
-} */
+    min-height: calc(100vh - 473px);
+}
 
 
 
@@ -124,11 +139,24 @@ footer .footer-down .container .col-12 span {
     align-items: center;
 }
 
-
-
-
-
 @media (max-width: 992px) {
+
+
+
+    .navbar-collapse .navbar-nav li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .navbar-collapse .shop-cart {
+        margin-left: 0;
+    }
+
+
+    .navbar-collapse .account {
+        margin-left: 0;
+    }
+
 
 
     footer .container .footer-up .col-12 {
