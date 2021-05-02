@@ -1,0 +1,55 @@
+main .image {
+    background-image: url(https://dummyimage.com/1920x1080); background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    z-index: -1;
+}
+
+.image .black{
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1
+}
+
+.image .word{
+    color: white;
+ 
+}
+
+
+.image .col-12 svg{
+    width: auto;
+    height: 4rem;
+}
+
+.image .blue{
+    background-color: #162446;
+    z-index: 1
+}
+
+.image .col-12 .link{
+    color: white;
+    width: 40px;
+    height: 40px;
+    
+    font-size: 18px;
+    border: 2px solid white;
+    
+}
+
+.image .col-12 p{
+    color: white;
+    font-size: 16px;  
+}
+
+/* .image .row.signin{
+    width: 100%;
+} */
+
+.image .row .col-12 input{
+    width: 100%;
+}
+
+
+
+
