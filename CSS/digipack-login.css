@@ -112,12 +112,14 @@ main .mask{
     color: white;
 }
 
-.mask .row .col-12 .signin{
-padding: 16px 16px 8px 16px;
+.mask .row .col-12 button:hover{
+    cursor: pointer;
+    background-color:rgb(79,70,229);
+
 }
 
-.mask .row .col-12 .hidden{
-    display: none;
+.mask .row .col-12 .signin{
+padding: 16px 16px 8px 16px;
 }
 
 .mask .links{
@@ -125,27 +127,22 @@ padding: 16px 16px 8px 16px;
     bottom: 0;
 }
 
-
 @media(max-width: 992px){
-    
     .mask .right{
         padding: 2rem 0;
     }
-
     .word{
         display: none;
     }
     .mask .blue{
        display: none;
     }
-
     .mask .links{
         background-color: #162446;
         width: 100%;
         bottom: -65px;
         padding: 0 0 40px 0;
     }
-    
 }
 
 @media(max-width: 640px){
@@ -153,16 +150,13 @@ padding: 16px 16px 8px 16px;
     .mask .col-12 svg {
         height: 3rem;
     }
-
     .form{
         width: 100%;
         padding: 0 0.75rem
     }
-
     .mask .links{
        margin-top: -70px;
     }
-    
 }
 
 
