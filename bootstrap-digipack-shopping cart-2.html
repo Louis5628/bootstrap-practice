@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>數位方塊購物車-1</title>
+    <title>數位方塊購物車-2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <link rel="stylesheet" href="./CSS/20210423-bootstrap-digipack-template.css">
+    <link rel="stylesheet" href="./CSS/digipack-template.css">
 
     <link rel="stylesheet" href="./CSS/digipack-shopping cart template.css">
 
-    <link rel="stylesheet" href="./CSS/digipack-shopping cart-1.css">
+    <link rel="stylesheet" href="./CSS/digipack-shopping cart-2.css">
 
 </head>
 
@@ -91,11 +91,11 @@
                         </div>
                         <div class="col-12 pt-4">
                             <div class="steps d-flex flex-row justify-content-around align-items-start">
-                                <div class="step active line text-center">
+                                <div class="step active line all text-center">
                                     <div class="round mb-2">1</div>
                                     <div class="text">確認購物車</div>
                                 </div>
-                                <div class="step line text-center">
+                                <div class="step active line text-center">
                                     <div class="round mb-2">2</div>
                                     <div class="text">付款與運送方式</div>
                                 </div>
@@ -112,100 +112,54 @@
                     </div>
                     <hr class="featurette-divider">
                     <!-- 頁面新增區開始 -->
-                    <div class="row no-gutters">
+                    <div class="row">
                         <div class="col-12">
-                            <span style="font-size: 24px; font-weight: 400;">訂單明細</span>
+                            <span style="font-size: 24px; font-weight: 400;">付款方式</span>
                         </div>
-                        <!-- product-1 -->
-                        <div class="col-12 product d-flex flex-row justify-content-between mt-5">
-                            <!-- 產品與數量 -->
-                            <div class="col-6 col-md-5 d-flex flex-row align-items-center px-0">
-                                <!-- 產品 -->
-                                <div class="col-4 col-md-2 px-0">
-                                    <img class="rounded-circle p-0"
-                                        src="https://items-static.postmates.com/uploads/media/c35c1b1c-f44f-47ea-b183-c47f8190aab9/original.jpg?v=63721019941"
-                                        alt="">
-                                </div>
-                                <div class="col-8 ml-2 col-md-10 d-flex flex-column px-0">
-                                    <span style="font-size: 16px; font-weight: 500;">Chicken momo</span>
-                                    <small class="num">#41551</small>
-                                </div>
-                                <!-- 產品 -->
-                            </div>
-                            <!-- 數量 -->
-                            <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
-                                <div class="qty pr-4"><small>-</small>
-                                    <input type="number" placeholder="1" class="text-center mx-2 rounded">
-                                    <small>+</small>
-                                </div>
+                        <div class="col-12 d-flex align-items-center px-0">
+                            <label for="credit" class="mb-0 ml-5 py-4">
+                                <input type="radio" name="one" id="credit">
+                                <span class="ml-1">信用卡付款</span>
+                            </label>
+                        </div>
+                        <hr class="my-0" style="width: 90%;">
 
-                                <small class="pr-4">
-                                    $10.50
-                                </small>
-                            </div>
-                            
+                        <div class="col-12 d-flex align-items-center px-0">
+                            <label for="atm" class="mb-0 ml-5 py-4">
+                                <input type="radio" name="one" id="atm">
+                                <span class="ml-1">網路 ATM</span>
+                            </label>
                         </div>
-                        <!-- product-1 -->
-                        <hr class="my-4 w-100">
-                        <!-- product-2 -->
-                        <div class="col-12 product d-flex flex-row justify-content-between">
-                             <!-- 產品與數量 -->
-                            <div class="col-6 col-md-5 d-flex flex-row align-items-center px-0">
-                                <!-- 產品 -->
-                                <div class="col-4 col-md-2 px-0">
-                                    <img class="rounded-circle p-0"
-                                        src="https://cdn.shopify.com/s/files/1/0266/9841/6315/products/TY_34_300x.jpg?v=1603020281"
-                                        alt="">
-                                </div>
-                                <div class="col-8 ml-2 col-md-10 d-flex flex-column px-0">
-                                    <span style="font-size: 16px; font-weight: 500;">Spicy Mexican potatoes</span>
-                                    <small class="num">#66999</small>
-                                </div>
-                                <!-- 產品 -->
-                            </div>
-                            <!-- 數量 -->
-                            <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
-                                <div class="qty pr-4"><small>-</small>
-                                    <input type="number" placeholder="1" class="text-center mx-2 rounded">
-                                    <small>+</small>
-                                </div>
+                        <hr class="my-0" style="width: 90%;">
 
-                                <small class="pr-4">
-                                    $10.50
-                                </small>
-                            </div>
+                        <div class="col-12 d-flex align-items-center px-0">
+                            <label for="num" class="mb-0 ml-5 py-4">
+                                <input type="radio" name="one" id="num">
+                                <span class="ml-1">超商代碼</span>
+                            </label>
                         </div>
-                         <!-- product-2 -->
-                        <hr class="my-4 w-100">
-                         <!-- product-3 -->
-                        <div class="col-12 product d-flex flex-row justify-content-between">
-                            <!-- 產品與數量 -->
-                            <div class="col-6 col-md-5 d-flex flex-row align-items-center px-0">
-                                <!-- 產品 -->
-                                <div class="col-4 col-md-2 px-0">
-                                    <img class="rounded-circle p-0"
-                                        src="https://images.pexels.com/photos/5591712/pexels-photo-5591712.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                                        alt="">
-                                </div>
-                                <div class="col-8 ml-2 col-md-10 d-flex flex-column px-0">
-                                    <span style="font-size: 16px; font-weight: 500;">Breakfast</span>
-                                    <small class="num">#86577</small>
-                                </div>
-                                <!-- 產品 -->
-                            </div>
-                            <!-- 數量 -->
-                            <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
-                                <div class="qty pr-4"><small>-</small>
-                                    <input type="number" placeholder="1" class="text-center mx-2 rounded">
-                                    <small>+</small>
-                                </div>
+                    </div>
 
-                                <small class="pr-4">
-                                    $10.50
-                                </small>
-                            </div>
+                    <hr class="my-4 w-100">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <span style="font-size: 24px; font-weight: 400;">運送方式</span>
                         </div>
-                        <!-- product-3 -->
+                        <div class="col-12 d-flex align-items-center px-0">
+                            <label for="blackcat" class="mb-0 ml-5 py-4">
+                                <input type="radio" name="two" id="blackcat">
+                                <span class="ml-1">黑貓宅配</span>
+                            </label>
+                        </div>
+                        <hr class="my-0" style="width: 90%;">
+                        <div class="col-12 d-flex align-items-center px-0">
+                            <label for="storetostore" class="mb-0 ml-5 py-4">
+                                <input type="radio" name="two" id="storetostore">
+                                <span class="ml-1">超商店到店</span>
+                            </label>
+                        </div>
+
                     </div>
                     <!-- 頁面新增區結束 -->
                     <hr class="my-4 w-100">
@@ -231,8 +185,11 @@
                     <hr class="featurette-divider">
                     <div class="row no-gutters">
                         <div class="col-12 d-flex justify-content-between">
-                            <p class="d-flex align-items-center m-0"><i class="fa fa-arrow-left text-sm pr-2"></i>返回購物</p>
-                            <a href=""><button type="button" class="btn btn-primary px-5 py-3" >下一步</button></a>
+                            <!-- <p class="d-flex align-items-center m-0"><i class="fa fa-arrow-left text-sm pr-2"></i>返回購物
+                            </p> -->
+                            <a href=""><button type="button" class="btn btn-outline-primary px-5 py-3">上一步</button></a>
+
+                            <a href=""><button type="button" class="btn btn-primary px-5 py-3">下一步</button></a>
                         </div>
                     </div>
                 </div>

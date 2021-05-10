@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>數位方塊購物車-2</title>
+    <title>數位方塊購物車-3</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <link rel="stylesheet" href="./CSS/20210423-bootstrap-digipack-template.css">
+    <link rel="stylesheet" href="./CSS/digipack-template.css">
 
     <link rel="stylesheet" href="./CSS/digipack-shopping cart template.css">
 
-    <link rel="stylesheet" href="./CSS/digipack-shopping cart-2.css">
+    <link rel="stylesheet" href="./CSS/digipack-shopping cart-3.css">
 
 </head>
 
@@ -52,8 +52,6 @@
                                 class="shop-cart fas fa-shopping-cart d-flex justify-content-center align-items-center"></i>
 
                             <i class="account fas fa-user-circle d-flex justify-content-center align-items-center"></i>
-
-
                         </a> -->
 
                         <div class="dropdown d-flex flex-row align-items-center">
@@ -95,11 +93,11 @@
                                     <div class="round mb-2">1</div>
                                     <div class="text">確認購物車</div>
                                 </div>
-                                <div class="step active line text-center">
+                                <div class="step active line all text-center">
                                     <div class="round mb-2">2</div>
                                     <div class="text">付款與運送方式</div>
                                 </div>
-                                <div class="step line text-center">
+                                <div class="step active line text-center">
                                     <div class="round mb-2">3</div>
                                     <div class="text">填寫資料</div>
                                 </div>
@@ -112,55 +110,47 @@
                     </div>
                     <hr class="featurette-divider">
                     <!-- 頁面新增區開始 -->
-                    <div class="row">
+                    <div class="row d-flex justify-content-center pt-0 pb-3">
                         <div class="col-12">
-                            <span style="font-size: 24px; font-weight: 400;">付款方式</span>
+                            <span style="font-size: 24px; font-weight: 400;">寄送資料</span>
                         </div>
-                        <div class="col-12 d-flex align-items-center px-0">
-                            <label for="credit" class="mb-0 ml-5 py-4">
-                                <input type="radio" name="one" id="credit">
-                                <span class="ml-1">信用卡付款</span>
-                            </label>
+                        <div class="col-12 mt-2">
+                            <label for="cusname" class="w-100 p-1 mb-0" style="font-size: 20px;">姓名</label>
+                           
                         </div>
-                        <hr class="my-0" style="width: 90%;">
+                        <div class="col-12">
+                            <input type="text" class="w-100 py-2 px-4" id="cusname" placeholder="王小明">
+                        </div>
 
-                        <div class="col-12 d-flex align-items-center px-0">
-                            <label for="atm" class="mb-0 ml-5 py-4">
-                                <input type="radio" name="one" id="atm">
-                                <span class="ml-1">網路 ATM</span>
-                            </label>
+                        <div class="col-12 mt-2">
+                            <label for="phone" class="w-100 p-1 mb-0" style="font-size: 20px;">電話</label>
                         </div>
-                        <hr class="my-0" style="width: 90%;">
+                        <div class="col-12">
+                            <input type="text" class="w-100 py-2 px-4" id="phone" placeholder="0912345678">
+                        </div>
 
-                        <div class="col-12 d-flex align-items-center px-0">
-                            <label for="num" class="mb-0 ml-5 py-4">
-                                <input type="radio" name="one" id="num">
-                                <span class="ml-1">超商代碼</span>
-                            </label>
+                        <div class="col-12 mt-2">
+                            <label for="email" class="w-100 p-1 mb-0" style="font-size: 20px;">Email</label>
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="w-100 py-2 px-4" id="email" placeholder="abc123@gmail.com">
+                        </div>
+
+                        <div class="col-12 mt-2">
+                            <label for="address" class="w-100 p-1 mb-0" style="font-size: 20px;">地址</label>
+                           
+                        </div>
+                        <div class="col-6 pr-1">
+                            <input type="text" class="w-100 py-2 px-4" id="address" placeholder="城市">
+                        </div>
+                        <div class="col-6 pl-1">
+                            <input type="text" class="w-100 py-2 px-4" id="address" placeholder="郵遞區號">
+                        </div>
+                        <div class="col-12 mt-2">
+                            <input type="text" class="w-100 py-2 px-4" id="address" placeholder="地址">
                         </div>
                     </div>
-
-                    <hr class="my-4 w-100">
-
-                    <div class="row">
-                        <div class="col-12">
-                            <span style="font-size: 24px; font-weight: 400;">運送方式</span>
-                        </div>
-                        <div class="col-12 d-flex align-items-center px-0">
-                            <label for="blackcat" class="mb-0 ml-5 py-4">
-                                <input type="radio" name="two" id="blackcat">
-                                <span class="ml-1">黑貓宅配</span>
-                            </label>
-                        </div>
-                        <hr class="my-0" style="width: 90%;">
-                        <div class="col-12 d-flex align-items-center px-0">
-                            <label for="storetostore" class="mb-0 ml-5 py-4">
-                                <input type="radio" name="two" id="storetostore">
-                                <span class="ml-1">超商店到店</span>
-                            </label>
-                        </div>
-
-                    </div>
+                    
                     <!-- 頁面新增區結束 -->
                     <hr class="my-4 w-100">
                     <div class="row no-gutters d-flex flex-column align-content-end">
@@ -184,12 +174,12 @@
                     </div>
                     <hr class="featurette-divider">
                     <div class="row no-gutters">
-                        <div class="col-12 d-flex justify-content-between">
+                        <div class="col-12 d-flex justify-content-between mt-2">
                             <!-- <p class="d-flex align-items-center m-0"><i class="fa fa-arrow-left text-sm pr-2"></i>返回購物
                             </p> -->
                             <a href=""><button type="button" class="btn btn-outline-primary px-5 py-3">上一步</button></a>
 
-                            <a href=""><button type="button" class="btn btn-primary px-5 py-3">下一步</button></a>
+                            <a href=""><button type="button" class="btn btn-primary px-5 py-3">前往付款</button></a>
                         </div>
                     </div>
                 </div>
