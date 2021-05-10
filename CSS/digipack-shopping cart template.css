@@ -92,3 +92,53 @@ span{
     font-size: 18px;
     font-weight: 700;
 }
+
+
+@media(max-width:992px){
+    .container {
+        max-width: none;
+    }
+
+
+}
+
+@media(max-width:768px){
+    .container {
+        max-width: 28rem;
+    }
+
+    .step.line::after{
+        content: '';
+        width: 40%;
+        height: 8px;
+        background-color:rgba(229, 231, 235);
+        border-radius: 12px;
+    
+        position: absolute;
+        right: -20%;
+        top: 30%;
+        transform: translateY(-50%);
+    }
+    
+    .step.active.line::before{
+        content: '';
+        width: 13%;
+        height: 8px;
+        background-color:rgb(110, 231, 183);
+        border-radius: 12px;
+    
+        position: absolute;
+        right: 7%;
+        top: 30%;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    .cart .text{
+        font-size: 12px;
+    }
+
+
+
+
+}
