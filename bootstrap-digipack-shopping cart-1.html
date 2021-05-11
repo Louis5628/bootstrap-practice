@@ -133,23 +133,25 @@
                                 <!-- 產品 -->
                             </div>
                             <!-- 數量 -->
-                            <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
-                                <div class="qty pr-4"><small>-</small>
-                                    <input type="number" placeholder="1" class="text-center mx-2 rounded">
-                                    <small>+</small>
+                            <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center ">
+                                <div class="qty pr-4 position-relative">
+                                    <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
+                                    <input type="number" value="1" class="text-center mx-2 rounded">
+                                    <button id="addBtn" class="addBtn" style="padding-right: 65px;"
+                                        onclick="add(this)">+</button>
+                                    <small data-price="10.5" class="price position-absolute"
+                                        style="top: calc(50% - 9.5px); right: 30px;">
+                                        $10.50
+                                    </small>
                                 </div>
-
-                                <small class="pr-4">
-                                    $10.50
-                                </small>
                             </div>
-                            
+
                         </div>
                         <!-- product-1 -->
                         <hr class="my-4 w-100">
                         <!-- product-2 -->
                         <div class="col-12 product d-flex flex-row justify-content-between">
-                             <!-- 產品與數量 -->
+                            <!-- 產品與數量 -->
                             <div class="col-6 col-md-5 d-flex flex-row align-items-center px-0">
                                 <!-- 產品 -->
                                 <div class="col-4 col-md-2 px-0">
@@ -175,9 +177,9 @@
                                 </small>
                             </div>
                         </div>
-                         <!-- product-2 -->
+                        <!-- product-2 -->
                         <hr class="my-4 w-100">
-                         <!-- product-3 -->
+                        <!-- product-3 -->
                         <div class="col-12 product d-flex flex-row justify-content-between">
                             <!-- 產品與數量 -->
                             <div class="col-6 col-md-5 d-flex flex-row align-items-center px-0">
@@ -231,8 +233,10 @@
                     <hr class="featurette-divider">
                     <div class="row no-gutters">
                         <div class="col-12 d-flex justify-content-between">
-                            <p class="d-flex align-items-center m-0"><i class="fa fa-arrow-left text-sm pr-2"></i>返回購物</p>
-                            <a href="./bootstrap-digipack-shopping cart-2.html"><button type="button" class="btn btn-primary px-5 py-3" >下一步</button></a>
+                            <p class="d-flex align-items-center m-0"><i class="fa fa-arrow-left text-sm pr-2"></i>返回購物
+                            </p>
+                            <a href="./bootstrap-digipack-shopping cart-2.html"><button type="button"
+                                    class="btn btn-primary px-5 py-3">下一步</button></a>
                         </div>
                     </div>
                 </div>
@@ -376,6 +380,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
+
+
+
+    <script>
+        function add(ele) {
+            let number = ele.parentNode.children[1];
+            let price = ele.parentNode.children[3];
+            number.value = parseFloat(number.value) + 1;
+            price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
+
+            console.log(price.dataset.price);
+            console.log(ele.parentNode.children);
+        }
+
+        function sub(ele) {
+            let number = ele.parentNode.children[1];
+            let price = ele.parentNode.children[3];
+            if (number.value > 1) {
+                number.value = parseFloat(number.value) - 1;
+                price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
+            } else {
+                number.value = 1
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>

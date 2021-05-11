@@ -18,8 +18,9 @@ nav .container .navbar {
 .navbar-collapse {
     background-color: white;
     z-index: 99;
-
 }
+
+
 
 nav .container .navbar .logo img {
     width: 40%;
