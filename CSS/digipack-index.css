@@ -16,6 +16,25 @@ main .carousel .carousel-inner .carousel-item img {
     height: calc(100vh - 92px);
 }
 
+.swiper-container {
+    width: 100%;
+    height: calc(100vh - 92px);
+}
+
+.swiper-slide img {
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url(https://dummyimage.com/1920x1080); */
+    background-color: gray;
+    background-size: cover;
+    background-position: center;
+}
+
 
 main .container .section-1 {
     padding: 96px 20px;
@@ -432,8 +451,13 @@ main .section-6 .row {
 
 @media (max-width: 768px) {
 
-    main .carousel .carousel-inner .carousel-item img {
+    /* main .carousel .carousel-inner .carousel-item img {
         height: unset;
+    } */
+
+    .swiper-container {
+        width: 100%;
+        height: 70vw;
     }
 
     main .container {

@@ -134,10 +134,10 @@
                             </div>
                             <!-- 數量 -->
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center ">
-                                <div class="qty pr-4 position-relative">
+                                <div class="pr-4 position-relative">
                                     <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
-                                    <input type="number" value="1" class="text-center mx-2 rounded">
-                                    <button id="addBtn" class="addBtn" style="padding-right: 65px;"
+                                    <input type="number" value="1" class="text-center rounded">
+                                    <button id="addBtn" class="addBtn" style="margin-right: 55px;"
                                         onclick="add(this)">+</button>
                                     <small data-price="10.5" class="price position-absolute"
                                         style="top: calc(50% - 9.5px); right: 30px;">
@@ -167,14 +167,16 @@
                             </div>
                             <!-- 數量 -->
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
-                                <div class="qty pr-4"><small>-</small>
-                                    <input type="number" placeholder="1" class="text-center mx-2 rounded">
-                                    <small>+</small>
+                                <div class="pr-4 position-relative">
+                                    <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
+                                    <input type="number" value="1" class="text-center rounded">
+                                    <button id="addBtn" class="addBtn" style="margin-right: 55px;"
+                                        onclick="add(this)">+</button>
+                                    <small data-price="10.5" class="price position-absolute"
+                                        style="top: calc(50% - 9.5px); right: 30px;">
+                                        $10.50
+                                    </small>
                                 </div>
-
-                                <small class="pr-4">
-                                    $10.50
-                                </small>
                             </div>
                         </div>
                         <!-- product-2 -->
@@ -197,14 +199,16 @@
                             </div>
                             <!-- 數量 -->
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
-                                <div class="qty pr-4"><small>-</small>
-                                    <input type="number" placeholder="1" class="text-center mx-2 rounded">
-                                    <small>+</small>
+                                <div class="pr-4 position-relative">
+                                    <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
+                                    <input type="number" value="1" class="text-center rounded" onchange="sum_qty(this)">
+                                    <button id="addBtn" class="addBtn" style="margin-right: 55px;"
+                                        onclick="add(this)">+</button>
+                                    <small data-price="10.5" class="price position-absolute"
+                                        style="top: calc(50% - 9.5px); right: 30px;">
+                                        $10.50
+                                    </small>
                                 </div>
-
-                                <small class="pr-4">
-                                    $10.50
-                                </small>
                             </div>
                         </div>
                         <!-- product-3 -->
@@ -214,7 +218,7 @@
                     <div class="row no-gutters d-flex flex-column align-content-end">
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <span class="text-muted">數量:</span>
-                            <span>3</span>
+                            <span id="qty" class="qty">3</span>
                         </div>
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <span class="text-muted d-flex col-1 col-md-3 px-0 mr-1">小計:</span>
@@ -390,8 +394,8 @@
             number.value = parseFloat(number.value) + 1;
             price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
 
-            console.log(price.dataset.price);
-            console.log(ele.parentNode.children);
+            // console.log(price.dataset.price);
+            // console.log(ele.parentNode.children);
         }
 
         function sub(ele) {
@@ -407,6 +411,24 @@
 
 
 
+        document.addEventListener("onchange", function () {
+            sum_qty();
+        });
+
+
+        function sum_qty() {
+            var qty = document.querySelector("qty").value;
+            qty.innerHTML = qty.value + qty.value + qty.value;
+            console.log(qty);
+            // document.getElementById("qty").innerHTML = "You selected: " + x;
+
+
+        }
+
+
+        // console.log(qty.parentNode.children[1]);
+
+        console.log(qty);
 
 
 
