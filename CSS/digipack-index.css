@@ -195,9 +195,8 @@ main .section-5 {
 
 
 .section-5 .row {
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
     margin: 0 20% 40px 20%;
-
 }
 
 .section-5 .rounded-circle {
@@ -326,11 +325,8 @@ main .section-6 .row {
     background-color: rgb(99, 102, 241);
 }
 
-
-
-
 .section-7 .container {
-    max-width: 95%;
+    /* max-width: 95%; */
     padding: 96px 20px;
 }
 
@@ -487,10 +483,9 @@ main .section-6 .row {
         height: 16rem;
     }
 
-    .section-7 .container {
+    /* .section-7 .container {
         max-width: 85%;
-
-    }
+    } */
 
     .section-8 .container {
         max-width: 80%;
@@ -527,6 +522,11 @@ main .section-6 .row {
 
     main .section-4 .row h1 {
         font-size: 24px;
+    }
+
+    main .section-4 img{
+        height: 10rem;
+        object-fit: cover;
     }
 
     .section-5 .row {
