@@ -146,7 +146,7 @@
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center ">
                                 <div class="pr-4 position-relative">
                                     <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
-                                    <input type="number" value="1" class="text-center rounded">
+                                    <input type="number" value="1" class="number text-center rounded">
                                     <button id="addBtn" class="addBtn" style="margin-right: 55px;"
                                         onclick="add(this)">+</button>
                                     <small data-price="10.5" class="price position-absolute"
@@ -179,7 +179,7 @@
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
                                 <div class="pr-4 position-relative">
                                     <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
-                                    <input type="number" value="1" class="text-center rounded">
+                                    <input type="number" value="1" class="number text-center rounded">
                                     <button id="addBtn" class="addBtn" style="margin-right: 55px;"
                                         onclick="add(this)">+</button>
                                     <small data-price="10.5" class="price position-absolute"
@@ -211,7 +211,8 @@
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
                                 <div class="pr-4 position-relative">
                                     <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
-                                    <input type="number" value="1" class="text-center rounded" onchange="sum_qty(this)">
+                                    <input type="number" value="1" class="number text-center rounded"
+                                        onchange="sum_qty(this)">
                                     <button id="addBtn" class="addBtn" style="margin-right: 55px;"
                                         onclick="add(this)">+</button>
                                     <small data-price="10.5" class="price position-absolute"
@@ -232,15 +233,15 @@
                         </div>
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <span class="text-muted d-flex col-1 col-md-3 px-0 mr-1">小計:</span>
-                            <span>$24.90</span>
+                            <span class="sub-total">$24.90</span>
                         </div>
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <span class="text-muted d-flex col-1 col-md-3 px-0 mr-1">運費:</span>
-                            <span>$24.90</span>
+                            <span class="shipment" data-price="24.9">$24.90</span>
                         </div>
                         <div class="col-3 d-flex justify-content-between align-items-center">
                             <span class="text-muted d-flex col-1 col-md-3 px-0 mr-1">總計:</span>
-                            <span>$24.90</span>
+                            <span class="total-price">$24.90</span>
                         </div>
 
                     </div>
@@ -419,26 +420,68 @@
             }
         }
 
+        var add_btn = document.querySelectorAll('.addBtn')
+        var sub_btn = document.querySelectorAll('.subBtn')
+        var number = document.querySelectorAll('.number')
+        var price = document.querySelectorAll('.price')
+        var qty = document.querySelector('.qty')
+        var sub_total = document.querySelector('.sub-total')
+        var total_price = document.querySelector('.total-price')
+        var shipment = document.querySelector('.shipment')
+
+        var product_qty = 0
+        var product_sub_total = 0
+        var product_total_price = 0
+
+        number.forEach(function (ele) {
+            product_qty = parseInt(ele.value) + product_qty
+        })
+
+        price.forEach(function (ele) {
+            product_sub_total = parseFloat(ele.dataset.price) + product_sub_total
+        })
+
+        product_total_price = product_sub_total + parseFloat(shipment.dataset.price)
+
+        console.log(shipment.dataset.price);
 
 
-        document.addEventListener("onchange", function () {
-            sum_qty();
-        });
+        qty.innerHTML = product_qty
+        sub_total.innerHTML = product_sub_total
+        total_price.innerHTML = product_total_price
 
 
-        function sum_qty() {
-            var qty = document.querySelector("qty").value;
-            qty.innerHTML = qty.value + qty.value + qty.value;
-            console.log(qty);
-            // document.getElementById("qty").innerHTML = "You selected: " + x;
+        add_btn.forEach(function (ele) {
+            ele.addEventListener('click', function () {
+                product_qty++
+                qty.innerHTML = product_qty
+                product_sub_total = product_qty * 10.5
+                sub_total.innerHTML = product_sub_total
+                product_total_price = product_sub_total
+                total_price.innerHTML = product_total_price + parseFloat(shipment.dataset.price)
+            })
+
+        })
+
+  
+
+        sub_btn.forEach(function (ele) {
+            ele.addEventListener('click', function () {
+                if (product_qty < 3) {
+                    qty.innerHTML = product_qty
+                } else {
+                    product_qty = product_qty - 1
+                    qty.innerHTML = product_qty
+                }
+            })
+
+        })
 
 
-        }
 
 
-        // console.log(qty.parentNode.children[1]);
 
-        console.log(qty);
+
 
 
 
