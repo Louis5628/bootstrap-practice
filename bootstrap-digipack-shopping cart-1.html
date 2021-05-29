@@ -211,8 +211,7 @@
                             <div class="col-6 col-md-4 p-0 d-flex justify-content-end align-items-center">
                                 <div class="pr-4 position-relative">
                                     <button id="subBtn" class="subBtn" onclick="sub(this)">-</button>
-                                    <input type="number" value="1" class="number text-center rounded"
-                                        onchange="sum_qty(this)">
+                                    <input type="number" value="1" class="number text-center rounded">
                                     <button id="addBtn" class="addBtn" style="margin-right: 55px;"
                                         onclick="add(this)">+</button>
                                     <small data-price="10.5" class="price position-absolute"
@@ -399,95 +398,109 @@
 
 
     <script>
-        function add(ele) {
-            let number = ele.parentNode.children[1];
-            let price = ele.parentNode.children[3];
-            number.value = parseFloat(number.value) + 1;
-            price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
 
-            // console.log(price.dataset.price);
-            // console.log(ele.parentNode.children);
-        }
+        // function add(ele) {
+        //     let number = ele.parentNode.children[1];
+        //     let price = ele.parentNode.children[3];
+        //     number.value = parseFloat(number.value) + 1;
+        //     price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
 
-        function sub(ele) {
-            let number = ele.parentNode.children[1];
-            let price = ele.parentNode.children[3];
-            if (number.value > 1) {
-                number.value = parseFloat(number.value) - 1;
-                price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
-            } else {
-                number.value = 1
-            }
-        }
+        //     // console.log(price.dataset.price);
+        //     // console.log(ele.parentNode.children);
+        // }
 
+        // function sub(ele) {
+        //     let number = ele.parentNode.children[1];
+        //     let price = ele.parentNode.children[3];
+        //     if (number.value > 1) {
+        //         number.value = parseFloat(number.value) - 1;
+        //         price.innerHTML = '$ ' + parseFloat(number.value) * parseFloat(price.dataset.price)
+        //     } else {
+        //         number.value = 1
+        //     }
+        // }
+
+        var product = document.querySelectorAll('.product')
         var add_btn = document.querySelectorAll('.addBtn')
         var sub_btn = document.querySelectorAll('.subBtn')
         var number = document.querySelectorAll('.number')
         var price = document.querySelectorAll('.price')
+
         var qty = document.querySelector('.qty')
-        var sub_total = document.querySelector('.sub-total')
+        var subtotal = document.querySelector('.sub-total')
         var total_price = document.querySelector('.total-price')
         var shipment = document.querySelector('.shipment')
 
         var product_qty = 0
-        var product_sub_total = 0
-        var product_total_price = 0
-
-        number.forEach(function (ele) {
-            product_qty = parseInt(ele.value) + product_qty
-        })
-
-        price.forEach(function (ele) {
-            product_sub_total = parseFloat(ele.dataset.price) + product_sub_total
-        })
-
-        product_total_price = product_sub_total + parseFloat(shipment.dataset.price)
-
-        console.log(shipment.dataset.price);
+        var product_subtotal = 0
+        var shipment_free = 500
+        var shipment_price = 60
 
 
-        qty.innerHTML = product_qty
-        sub_total.innerHTML = product_sub_total
-        total_price.innerHTML = product_total_price
+        function updateCart() {
+            product_qty = 0
+            product_subtotal = 0
+            for (let i = 0; i < product.length; i++) {
+                let item_subtotal = number[i].value * price[i].dataset.price
+                price[i].innerHTML = '$' + item_subtotal
+
+                product_qty += parseInt(number[i].value)
+                product_subtotal += item_subtotal
+
+            }
+
+            qty.innerHTML = product_qty
+            subtotal.innerHTML = '$' + product_subtotal
+            calcShipment()
+            total_price.innerHTML = '$' + parseFloat(product_subtotal + shipment_price)
+            console.log(total_price.innerHTML);
+
+        }
+
+        updateCart();
 
 
-        add_btn.forEach(function (ele) {
+        add_btn.forEach(function (ele, i) {
             ele.addEventListener('click', function () {
-                product_qty++
-                qty.innerHTML = product_qty
-                product_sub_total = product_qty * 10.5
-                sub_total.innerHTML = product_sub_total
-                product_total_price = product_sub_total
-                total_price.innerHTML = product_total_price + parseFloat(shipment.dataset.price)
+                number[i].value = parseInt(number[i].value) + 1
+                updateCart()
             })
 
         })
 
-  
-
-        sub_btn.forEach(function (ele) {
+        sub_btn.forEach(function (ele, i) {
             ele.addEventListener('click', function () {
-                if (product_qty < 3) {
-                    qty.innerHTML = product_qty
-                } else {
-                    product_qty = product_qty - 1
-                    qty.innerHTML = product_qty
+                if (number[i].value > 1) {
+                    number[i].value = parseInt(number[i].value) - 1
+                    updateCart()
                 }
             })
+        })
 
+        number.forEach(function (ele) {
+            ele.addEventListener('change', function () {
+                if (ele.value == '' || ele.value == 0) {
+                    ele.value = 1;
+                }
+                updateCart();
+            });
+
+            ele.addEventListener('keyup', function () {
+                ele.value = ele.value.replace(/\D+/g, '');
+            })
         })
 
 
+        function calcShipment() {
+            if (product_subtotal >= shipment_free) {
+                shipment_price = 0
+                shipment.innerHTML = '$' + shipment_price
 
-
-
-
-
-
-
-
-
-
+            } else {
+                shipment_price = 60
+                shipment.innerHTML = '$' + shipment_price
+            }
+        }
 
     </script>
 </body>
